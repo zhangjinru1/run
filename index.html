@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html ng-app="myApp">
+<head lang="en">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"/>
+    <title></title>
+    <link rel="stylesheet" href="css/indexcss/index.css"/>
+    <link rel="stylesheet" href="font/FortAwesome/css/font-awesome.css"/>
+    <script src="js/jquery.min.js"></script>
+    <script src="js/angular-1.4.6.min.js"></script>
+    <script src="js/angular-route.min.js"></script>
+</head>
+<body ng-controller="ctrl">
+<header>
+    <div class="cbd">
+        <i class="fa fa-bars" aria-hidden="true" style="color:white"></i>
+    </div>
+    <div><img src="img/indeximg/logo.png" alt=""/></div>
+</header>
+<div class="banner">
+    <div>
+        <img src="img/indeximg/download.png" alt=""/>
+        <p>立即下载</p>
+        <span>Download</span>
+    </div>
+</div>
+<div class="nav">
+    <ul>
+        <li ng-repeat="item in nav"><a ng-href="{{item.href}}" ng-class="{qwe:item.on}" ng-bind="item.data" ng-click="dian($index)"></a></li>
+    </ul>
+</div>
+<ng-view></ng-view>
+<div id="cbl">
+    <div>
+        <ul>
+            <li><a href="">首页</a></li>
+            <li><a href="html/about.html">关于我们</a></li>
+            <li><a href="html/join.html">加入我们</a></li>
+            <li><a href="html/problem.html">常见问题</a></li>
+            <li><a href="html/new.html">新闻动态</a></li>
+        </ul>
+    </div>
+</div>
+</body>
+<script>
+    var app = angular.module("myApp",["ngRoute"]);
+    app.config(function($routeProvider ){
+       $routeProvider
+               .when("/quan",{
+                   templateUrl:"view/quan.html"
+               })
+               .when("/tuan",{
+                   templateUrl:"view/tuan.html"
+               })
+               .when("/zhao",{
+                   templateUrl:"view/zhao.html"
+               })
+               .otherwise("/quan")
+    });
+    app.controller("ctrl",function($scope,$http){
+        $http.get("data/index.json").then(function(res){
+            $scope.nav = res.data.nav;
+            $scope.dian = function(index){
+                angular.forEach($scope.nav,function(key,value){
+                    key.on = false;
+                });
+                $scope.nav[index].on = true;
+            }
+        })
+    });
+
+
+
+    $(document).click(function(e){
+        $("#cbl").removeClass("huadong");
+        $("body").css({"overflow":"auto"})
+    });
+    $(".cbd").click(function(event){
+        event.stopPropagation();
+        $("#cbl").addClass("huadong");
+        $("body").css({"overflow":"hidden"})
+    });
+    $("#cbl>div").eq(0).click(function(event){
+        event.stopPropagation();
+    });
+
+    window.onscroll = function(){
+        var p=$("body").scrollTop();
+        if(p >= 263){
+            $(".nav").css({"position":"fixed","top":0,"width":"100%"});
+            $(".quan>p").eq(0).css("margin-top","15%")
+        }else{
+            $(".nav").css("position","static");
+            $(".quan>p").eq(0).css("margin-top",0);
+        }
+    };
+
+</script>
+</html>

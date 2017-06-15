@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script src="joinJS/jquery.3.1.1.js"></script>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<link rel="stylesheet" href="font/FortAwesome/css/font-awesome.css" />
+		<link rel="stylesheet" href="css/joincss/joinstyle.css" />
+	</head>
+	<body>
+		<header>
+			<div></div>
+			<div>
+				<i class="fa fa-bars cbd"></i>
+				<span><img src="img/logo.png" alt="" /></span>
+			</div>	
+			<a class="jiaru">加入我们</a>	
+		</header>
+		<div id="cbl">
+			<div>
+				<ul>
+					<li><a href="../index.html">首页</a></li>
+					<li><a href="about.html">关于我们</a></li>
+					<li><a href="">加入我们</a></li>
+					<li><a href="problem.html">常见问题</a></li>
+					<li><a href="new.html">新闻动态</a></li>
+				</ul>
+			</div>
+		</div>
+		<p>我们不只是工作伙伴，更是知己</p>
+		<div class="anniu">
+			<p>广州</p>
+			<p>北京</p>
+		</div>
+		<div class="context">
+			<div class="huan">
+				<p>高级Java工程师</p>		
+				<ul>
+					<li>我们团队：</li>
+					<li>1. 不断追求更稳定、更高性能的系统架构。</li>
+					<li>2. 对事不对人的团队氛围，鼓励经得起推敲的新想法，只为把事情做好。</li>
+					<li>热爱技术分享交流。</li>
+				</ul>
+				<ul>
+					<li>你会获得：</li>
+					<li>1. 不断追求更稳定、更高性能的系统架构。</li>
+					<li>2. 对事不对人的团队氛围，鼓励经得起推敲的新想法，只为把事情做好。</li>
+					<li>热爱技术分享交流。</li>
+				</ul>
+				<ul>
+					<li>职位描述：</li>
+					<li>1. 不断追求更稳定、更高性能的系统架构。</li>
+					<li>2. 对事不对人的团队氛围，鼓励经得起推敲的新想法，只为把事情做好。</li>
+					<li>热爱技术分享交流。</li>
+				</ul>
+				<ul>
+					<li>职业要求：</li>
+					<li>1. 不断追求更稳定、更高性能的系统架构。</li>
+					<li>2. 对事不对人的团队氛围，鼓励经得起推敲的新想法，只为把事情做好。</li>
+					<li>热爱技术分享交流。</li>
+				</ul>
+			</div>
+			<div class="huan" style="display: none;">
+				<p>高级前端工程师</p>		
+				<ul>
+					<li>我们团队：</li>
+					<li>1. 不断追求更稳定、更高性能的系统架构。</li>
+					<li>2. 对事不对人的团队氛围，鼓励经得起推敲的新想法，只为把事情做好。</li>
+					<li>热爱技术分享交流。</li>
+				</ul>
+				<ul>
+					<li>你会获得：</li>
+					<li>1. 不断追求更稳定、更高性能的系统架构。</li>
+					<li>2. 对事不对人的团队氛围，鼓励经得起推敲的新想法，只为把事情做好。</li>
+					<li>热爱技术分享交流。</li>
+				</ul>
+				<ul>
+					<li>职位描述：</li>
+					<li>1. 不断追求更稳定、更高性能的系统架构。</li>
+					<li>2. 对事不对人的团队氛围，鼓励经得起推敲的新想法，只为把事情做好。</li>
+					<li>热爱技术分享交流。</li>
+				</ul>
+				<ul>
+					<li>职业要求：</li>
+					<li>1. 不断追求更稳定、更高性能的系统架构。</li>
+					<li>2. 对事不对人的团队氛围，鼓励经得起推敲的新想法，只为把事情做好。</li>
+					<li>热爱技术分享交流。</li>
+				</ul>
+			</div>
+		</div>
+		<footer>
+			<p>期待拥有线颜色彩的你</p>
+			<a href="#">我要加入</a>
+			<p>发送简历给我们，以"城市+职位+姓名"为主题，内容</p>
+			<p>请附带简历和作品。</p>
+		</footer>
+	</body>
+	<script>
+	
+		$(".anniu>p").click(function(){
+			var i=$(this).index()
+			
+			$(".huan").eq(i).show().siblings().hide()
+			$(".anniu>p").eq(i).css("background","blue")
+			$(".huan").eq(i).css({"transition":"0.5s all","transform":"translateX(0)"}).siblings().css({"transition":"1s all","transform":"translateX(100%)"})
+		})
+
+		$(document).click(function(e){
+			$("#cbl").removeClass("huadong");
+			$("body").css({"overflow":"auto"})
+		});
+		$(".cbd").click(function(event){
+			event.stopPropagation();
+			$("#cbl").addClass("huadong");
+			$("body").css({"overflow":"hidden"})
+		});
+		$("#cbl>div").eq(0).click(function(event){
+			event.stopPropagation();
+		});
+	</script>
+</html>

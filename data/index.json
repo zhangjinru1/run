@@ -1,0 +1,7 @@
+{
+  "nav":[
+    {"data":"悦跑圈","href":"#quan","on":true},
+    {"data":"悦跑团","href":"#tuan","on":false},
+    {"data":"跑团招募","href":"#zhao","on":false}
+  ]
+}

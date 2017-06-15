@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<link rel="stylesheet" href="font/FortAwesome/css/font-awesome.css" />
+		<link rel="stylesheet" href="css/newIn/newInstyle.css" />
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<script src="../js/jquery.min.js"></script>
+	</head>
+	<body>
+		<header>
+			<span><i class="fa fa-bars cbd"></i></span>
+			<p><img src="img/logo.png" alt="" /></p>
+		</header>
+		<div id="cbl">
+			<div>
+				<ul>
+					<li><a href="../index.html">首页</a></li>
+					<li><a href="about.html">关于我们</a></li>
+					<li><a href="join.html">加入我们</a></li>
+					<li><a href="problem.html">常见问题</a></li>
+					<li><a href="new.html">新闻动态</a></li>
+				</ul>
+			</div>
+		</div>
+		<div class="main1">
+			<p>中国田协与悦跑圈达成战略合作</p>
+			<p>时间：2016.09.07 作者：新华社</p>
+			<div>
+				<img src="img/news.jpg" alt="" />
+				<p>新华社北京9月6日体育专电（记者林德韧）中国田径协会与跑步APP悦跑圈6日在京举行战略合作发布会，悦跑圈成为中国田协官方指定的线上马拉松唯一合作伙伴。未来，双方将依托各自在马拉松赛事线上线下的优势资源，全方位覆盖线上线下跑步人群。</p>
+			</div>
+			<div>
+				<img src="img/news.jpg" alt="" />
+				<p>新华社北京9月6日体育专电（记者林德韧）中国田径协会与跑步APP悦跑圈6日在京举行战略合作发布会，悦跑圈成为中国田协官方指定的线上马拉松唯一合作伙伴。未来，双方将依托各自在马拉松赛事线上线下的优势资源，全方位覆盖线上线下跑步人群。</p>
+			</div>
+			<div>
+				<img src="img/news.jpg" alt="" />
+				<p>新华社北京9月6日体育专电（记者林德韧）中国田径协会与跑步APP悦跑圈6日在京举行战略合作发布会，悦跑圈成为中国田协官方指定的线上马拉松唯一合作伙伴。未来，双方将依托各自在马拉松赛事线上线下的优势资源，全方位覆盖线上线下跑步人群。</p>
+			</div>
+			<div>
+				<img src="img/news.jpg" alt="" />
+				<p>新华社北京9月6日体育专电（记者林德韧）中国田径协会与跑步APP悦跑圈6日在京举行战略合作发布会，悦跑圈成为中国田协官方指定的线上马拉松唯一合作伙伴。未来，双方将依托各自在马拉松赛事线上线下的优势资源，全方位覆盖线上线下跑步人群。</p>
+			</div>
+		</div>
+	</body>
+	<script>
+		$(document).click(function(e){
+			$("#cbl").removeClass("huadong");
+			$("body").css({"overflow":"auto"})
+		});
+		$(".cbd").click(function(event){
+			event.stopPropagation();
+			$("#cbl").addClass("huadong");
+			$("body").css({"overflow":"hidden"})
+		});
+		$("#cbl>div").eq(0).click(function(event){
+			event.stopPropagation();
+		});
+	</script>
+</html>
